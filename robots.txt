@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://inyo-megane.pages.dev/sitemap.xml
