@@ -143,6 +143,12 @@
   .faq-item summary::after{content:"＋";position:absolute;right:6px;top:16px;font-size:15px;color:var(--sub);font-weight:400;}
   .faq-item[open ] summary::after{content:"−";}
   .faq-a{padding:2px 4px 18px;font-size:16px;line-height:1.9;color:var(--ink);}
+.faq-outer{border:2px solid var(--line);border-radius:14px;background:var(--chuyo-bg);overflow:hidden;}
+.faq-outer>summary{cursor:pointer;list-style:none;min-height:56px;display:flex;align-items:center;justify-content:center;padding:12px 16px;font-size:17px;font-weight:800;}
+.faq-outer>summary::-webkit-details-marker{display:none;}
+.faq-outer>summary::after{content:"▽";margin-left:10px;font-size:14px;}
+.faq-outer[open]>summary::after{content:"△";}
+.faq-inner{padding:2px 14px 14px;}
   .note{margin-top:30px;font-size:13.5px;color:var(--sub);text-align:center;line-height:2.0;}
   .to-links{text-align:center;margin-top:22px;}
   .to-links a{display:inline-block;padding:10px 8px;font-size:15.5px;font-weight:700;color:var(--green);text-decoration:none;min-height:48px;}
@@ -215,13 +221,17 @@
   <div id="results"></div>
 
   <section class="faq-sec" aria-label="よくある質問">
-    <h2>よくある質問</h2>
-    <details class="faq-item"><summary>食の陰陽とは、何ですか？</summary><div class="faq-a">食べ物を「陰」と「陽」に分けて眺める、陰陽の見方です。陰はふわっとゆるめて熱を逃がすもの、陽は温めて引き締めるもの、その真ん中が中庸です。どちらが良い・悪いではなく、調和を目安にする知恵です。</div></details>
+    <details class="faq-outer">
+    <summary>よくある質問</summary>
+    <div class="faq-inner">
+        <details class="faq-item"><summary>食の陰陽とは、何ですか？</summary><div class="faq-a">食べ物を「陰」と「陽」に分けて眺める、陰陽の見方です。陰はふわっとゆるめて熱を逃がすもの、陽は温めて引き締めるもの、その真ん中が中庸です。どちらが良い・悪いではなく、調和を目安にする知恵です。</div></details>
     <details class="faq-item"><summary>陰と陽は、どうやって見分けるのですか？</summary><div class="faq-a">陰陽の見方では、中心へ集まる力（求心性）が陽、外へ広がる力（遠心性）が陰、と置きます。植物で見ると、地面の奥へ伸びる根が陽、空へ向かって伸びていく葉が陰です。この辞典の分類も、この眺め方をもとにしています。</div></details>
     <details class="faq-item"><summary>中庸の食べ物には、どんなものがありますか？</summary><div class="faq-a">穀物、とくに玄米が真ん中にあるとされます。陰と陽のどちらにも寄りすぎないので、毎日のごはんの中心に置く考え方です。この辞典では、玄米のほか、小松菜やブロッコリー、しいたけ、大豆なども中庸に分けています。</div></details>
     <details class="faq-item"><summary>陰陽の調和がとれた料理とは、どんな料理ですか？</summary><div class="faq-a">陰のものと陽のものを組み合わせた料理です。たとえば、冷奴に生姜とねぎの薬味、焼き魚に大根おろし、玄米に梅干しなど、日本の食卓に昔からある組み合わせがそうです。調和をととのえて作ると、美味しく感じることが多いといわれます。</div></details>
     <details class="faq-item"><summary>この辞典の分類は、絶対のものですか？</summary><div class="faq-a">いいえ。陰陽の見方をもとにした目安です。流派や本によって、少しずつ違うことがあります。眺め方のひとつとして、気軽に楽しんでくださいね。</div></details>
     <details class="faq-item"><summary>体調に合わせた食事を知りたいときは、どうすればいいですか？</summary><div class="faq-a">この辞典は、食べ物の眺め方を楽しむためのものです。体調に合わせた食事のことは、医師や管理栄養士など、専門家の方に相談してくださいね。</div></details>
+      </div>
+    </details>
   </section>
 
   <div class="core" style="margin-top:34px;">

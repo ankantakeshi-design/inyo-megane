@@ -134,6 +134,13 @@
   }
   .faq .q{font-weight:700; font-size:17px; line-height:1.5; margin:0 0 6px;}
   .faq .a{font-size:16px; line-height:1.7; margin:0;}
+.faq-outer{border:2px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden;}
+.faq-outer>summary{cursor:pointer;list-style:none;min-height:56px;display:flex;align-items:center;justify-content:center;padding:12px 16px;font-size:17px;font-weight:800;}
+.faq-outer>summary::-webkit-details-marker{display:none;}
+.faq-outer>summary::after{content:"▽";margin-left:10px;font-size:14px;}
+.faq-outer[open]>summary::after{content:"△";}
+.faq-inner{padding:2px 14px 14px;}
+.faq-inner .qa:last-child{margin-bottom:0;}
 
   /* 下部のリンク置き場 */
   .links{margin-top:30px; border-top:1px solid var(--line); padding-top:18px;}
@@ -188,7 +195,9 @@
 
   <!-- FAQ -->
   <section class="faq">
-    <h2>よくある質問</h2>
+    <details class="faq-outer">
+    <summary>よくある質問</summary>
+    <div class="faq-inner">
 
     <div class="qa">
       <p class="q">陰陽とは何ですか？</p>
@@ -224,6 +233,8 @@
       <p class="q">お金はかかりますか？</p>
       <p class="a">かかりません。辞典・クイズ・シミュレーターの全部を、無料で使えます。</p>
     </div>
+      </div>
+    </details>
   </section>
 
   <!-- 導線（リンク置き場） -->
