@@ -153,6 +153,19 @@
     text-align:center; color:var(--sub); font-size:14px; margin-top:26px;
   }
   img{height:auto;}
+
+  /* おすすめのサイト（他サイトと共通の形・2026-11-25） */
+  .osusume-fold{ margin-top:26px; border:1px solid var(--line); border-radius:18px; background:var(--card); overflow:hidden; }
+  .osusume-fold > summary{ cursor:pointer; list-style:none; min-height:56px; display:flex; align-items:center; justify-content:center; padding:12px 16px; font-size:17px; font-weight:800; }
+  .osusume-fold > summary::-webkit-details-marker{ display:none; }
+  .osusume-fold > summary::after{ content:"\25BD"; margin-left:10px; font-size:14px; color:var(--sub); }
+  .osusume-inner{ padding:2px 12px 12px; display:flex; flex-direction:column; gap:10px; }
+  .osusume-inner .card{ text-decoration:none; color:inherit; }
+  .card.t-mori{ background:#E8F3F8; }
+  .card.t-hotto{ background:#EBF4E6; }
+  .card.t-omoro{ background:#FFF6D9; }
+  .card.t-take{ background:#E9F1FA; }
+  .card img{ height:auto; }
 </style>
 </head>
 <body>
@@ -238,10 +251,7 @@
   </section>
 
   <!-- 導線（リンク置き場） -->
-  <div class="links">
-    <a href="https://mizujoshinomori.pages.dev/">🌳 集まれ水女子の森へもどる</a>
-    <a href="https://takechanlink.pages.dev/">🔗 たけちゃんリンク（全部の窓口）</a>
-  </div>
+  <details class="osusume-fold"><summary>おすすめのサイト</summary><div class="osusume-inner"><a class="card t-mori" href="https://mizujoshinomori.pages.dev/"><img src="osusume-mori.jpg" alt="" width="128" height="128"><span><span class="t">集まれ水女子の森｜新月・満月カレンダー</span><br><span class="d">月のカレンダーで、毎日をととのえる場所です。</span></span><span class="go">→</span></a><a class="card t-hotto" href="https://hotto-news.pages.dev/"><img src="osusume-hotto.jpg" alt="" width="128" height="128"><span><span class="t">森のほっとニュース</span><br><span class="d">心が温まる、いいニュースだけを毎朝お届け。</span></span><span class="go">→</span></a><a class="card t-omoro" href="https://omoro-good.pages.dev/"><img src="osusume-omoro.png" alt="" width="128" height="128"><span><span class="t">おもろグ〜</span><br><span class="d">くすっと笑える投稿、あつめました。</span></span><span class="go">→</span></a><a class="card t-take" href="https://takechanlink.pages.dev/"><img src="osusume-take.png" alt="" width="128" height="128"><span><span class="t">たけちゃんリンク</span><br><span class="d">全部の窓口は、こちらです。</span></span><span class="go">→</span></a></div></details>
 
   <p class="foot">心体調整塾</p>
 
