@@ -152,6 +152,9 @@
   .foot{
     text-align:center; color:var(--sub); font-size:14px; margin-top:26px;
   }
+  .foot-share-lead{ text-align:center; margin:34px 0 10px; font-size:14px; font-weight:700; color:var(--sub); }
+  .foot-share-row{ display:flex; gap:10px; }
+  .foot-share-btn{ flex:1; min-height:48px; padding:10px; background:var(--card); border:1.5px solid var(--megane-green); color:var(--megane-green); border-radius:999px; font-size:15px; font-weight:700; font-family:inherit; cursor:pointer; }
   img{height:auto;}
 
   /* おすすめのサイト（他サイトと共通の形・2026-11-25） */
@@ -256,9 +259,38 @@
     </details>
   </section>
 
+  <p class="foot-share-lead">この見方を、誰かにそっと届けたい時は</p>
+  <div class="foot-share-row"><button type="button" class="foot-share-btn" id="share-copy">🔗 リンクをコピー</button><button type="button" class="foot-share-btn" id="share-native">📤 シェアする</button></div>
   <p class="foot">心体調整塾</p>
 
 </div>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b478440a558348ad9a50e887bfb20eab"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+(function(){
+  var SHARE_URL='https://inyo-megane.pages.dev/';
+  function flash(btn,msg){ var o=btn.textContent; btn.textContent=msg; setTimeout(function(){ btn.textContent=o; },2000); }
+  function fallbackCopy(btn){
+    var ta=document.createElement('textarea');
+    ta.value=SHARE_URL; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); flash(btn,'コピーしました ✓'); }
+    catch(e){ flash(btn,'コピーできませんでした'); }
+    document.body.removeChild(ta);
+  }
+  function doCopy(btn){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(SHARE_URL).then(function(){ flash(btn,'コピーしました ✓'); }, function(){ fallbackCopy(btn); });
+    } else { fallbackCopy(btn); }
+  }
+  var c=document.getElementById('share-copy');
+  if(c){ c.addEventListener('click', function(){ doCopy(c); }); }
+  var s=document.getElementById('share-native');
+  if(s){ s.addEventListener('click', function(){
+    if(navigator.share){
+      navigator.share({ title:'陰陽メガネ', text:'食の陰陽を比べ方で学べる、辞典・クイズ・シミュレーター', url:SHARE_URL }).catch(function(){});
+    } else { doCopy(s); }
+  }); }
+})();
+</script>
 </body>
 </html>
